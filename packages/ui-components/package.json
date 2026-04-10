@@ -1,0 +1,9 @@
+{
+  "name": "@fashion/ui",
+  "version": "1.0.0",
+  "main": "./index.tsx",
+  "peerDependencies": {
+    "react": ">=18",
+    "@mantine/core": ">=7.0.0"
+  }
+}
