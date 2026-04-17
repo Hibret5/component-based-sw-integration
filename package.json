@@ -1,15 +1,17 @@
 {
-  "name": "fashion-store-monorepo",
+  "name": "fashion-monorepo",
   "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev -w apps/web-store",
-    "build": "npm run build -w apps/web-store"
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
   },
   "dependencies": {
+    "@mantine/core": "^7.17.8",
+    "@mantine/hooks": "^7.17.8",
     "@tabler/icons-react": "^3.41.1"
   }
 }

@@ -1,6 +1,7 @@
 {
   "name": "web-store",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,14 +12,13 @@
     "@fashion/logic": "*",
     "@fashion/ui": "*",
     "@mantine/core": "^7.0.0",
-    "@mantine/hooks": "^7.0.0",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "next": "14.x",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "25.6.0",
     "@types/react": "19.2.14",
-    "typescript": "6.0.2"
+    "typescript": "6.0.3"
   }
 }
