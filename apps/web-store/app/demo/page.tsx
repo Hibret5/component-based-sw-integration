@@ -30,7 +30,7 @@ export default function ComponentDemo() {
   return (
     <MantineProvider theme={theme}>
       {/* We use a specific background color to make the components "pop" */}
-      <Box bg="gray.0" minHeight="100vh" py={40}>
+      <Box bg="gray.0" mih="100vh" py={40}>
         <Container size="lg">
           <Stack gap="xs" mb={40}>
             <Badge color="teal" variant="filled">Component Library</Badge>
