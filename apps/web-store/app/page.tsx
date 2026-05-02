@@ -10,7 +10,8 @@ import { IconSun, IconMoon, IconShoppingCart, IconTrash, IconUserCircle } from '
 import { ProductCard, Logo, AuthForm, Footer, AboutSection, ContactSection } from '@fashion/ui';
 import { useStore } from '@fashion/logic';
 import { useEffect, useState } from 'react';
-import AdminDashboard from '../components/admin/AdminDashboard';
+import AdminDashboard from './admin/AdminDashboard';
+import type { AppView } from '@fashion/logic';
 
 const ADMIN_EMAIL = 'admin@store.com';
 const formatBirr = (value: number) => `ETB ${value.toFixed(2)}`;
@@ -48,7 +49,7 @@ export default function ShienStoreApp() {
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
 
-  const handleNav = (v: any) => {
+  const handleNav = (v: AppView) => {
     setView(v);
     close();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -178,8 +179,8 @@ export default function ShienStoreApp() {
           </Paper>
         ) : (
           <Stack gap="md">
-            {cart.map((item, index) => (
-              <Card key={`${item.id}-${index}`} withBorder radius="md" p="md">
+            {cart.map((item) => (
+              <Card key={item.cartItemId} withBorder radius="md" p="md">
                 <Group justify="space-between" align="center">
                   <Group>
                     <Image src={item.image} alt={item.title} w={70} h={70} radius="sm" />
@@ -190,7 +191,7 @@ export default function ShienStoreApp() {
                   </Group>
                   <Group>
                     <Text fw={700}>{formatBirr(item.price)}</Text>
-                    <ActionIcon color="red" variant="light" onClick={() => removeFromCart(index)}>
+                    <ActionIcon color="red" variant="light" onClick={() => removeFromCart(item.cartItemId)}>
                       <IconTrash size={18} />
                     </ActionIcon>
                   </Group>
